@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krutik Patel - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      .typing-cursor {
+        display: inline-block;
+        width: 3px; /* Slightly thicker */
+        height: 1.1em; /* Adjust to match font size / line height if needed */
+        background-color: #C026D3; /* Fuchsia accent for dark mode */
+        animation: blink 0.9s step-end infinite;
+        margin-left: 4px;
+        vertical-align: text-bottom; /* Aligns better with text */
+      }
+      html.light .typing-cursor {
+        background-color: #A21CAF; /* Darker Fuchsia for light mode */
+      }
+
+      @keyframes blink {
+        from, to { opacity: 1; }
+        50% { opacity: 0; }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
+        theme: {
+          extend: {
+            colors: {
+              // Light Theme (CRED-inspired, clean with fuchsia accent)
+              'background': '#F9FAFB',      // Very light gray (almost white)
+              'card': '#FFFFFF',
+              'card-alt': '#F3F4F6',      // Slightly darker light gray
+              'text-primary': '#1F2937',   // Dark gray
+              'text-secondary': '#4B5563', // Medium gray
+              'accent': '#A21CAF',           // Darker Fuchsia for light mode contrast
+              'accent-hover': '#86198F',     // Even darker Fuchsia for hover
+              'accent-content': '#FFFFFF',   // White text on accent
+              'border-color': '#E5E7EB',     // Light gray border
+
+              // Dark Theme (CRED-inspired, deep dark with vibrant fuchsia)
+              'dark-background': '#030712',   // Near black (very dark gray/blue)
+              'dark-card': '#0f172a', // Slightly lighter very dark blue/gray
+              'dark-card-alt': '#1e293b',    // Even lighter dark blue/gray
+              'dark-text-primary': '#F3F4F6', // Very light gray (off-white)
+              'dark-text-secondary': '#9CA3AF',// Light gray
+              'dark-accent': '#C026D3',        // Vibrant Fuchsia (Tailwind fuchsia-600)
+              'dark-accent-hover': '#D946EF',  // Lighter/Brighter Fuchsia (Tailwind fuchsia-500)
+              'dark-accent-content': '#FFFFFF', // White text on accent
+              'dark-border-color': '#374151',  // Dark gray border
+              'border-accent': 'rgba(162, 28, 175, 0.3)', // Darker Fuchsia with opacity for light
+              'dark-border-accent': 'rgba(192, 38, 211, 0.4)', // Fuchsia with opacity for dark
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+              heading: ['Poppins', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+              'subtle-pulse': 'subtlePulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(25px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              subtlePulse: { // Updated for Fuchsia glow
+                '0%': { boxShadow: '0 0 10px rgba(192, 38, 211, 0.25)', opacity: '0.85' }, 
+                '100%': { boxShadow: '0 0 25px rgba(192, 38, 211, 0.55)', opacity: '1'  }, 
+              }
+            },
+            boxShadow: {
+              // Light Theme Shadows (Clean & Subtle)
+              'futuristic-light': '0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07)',
+              'futuristic-hover-light': '0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.07)',
+              // Dark Theme Shadows (More like Glows with Fuchsia accent)
+              'futuristic-dark': '0 0 12px 1px rgba(192, 38, 211, 0.2), 0 0 5px rgba(192, 38, 211, 0.15)', 
+              'futuristic-hover-dark': '0 0 28px 3px rgba(192, 38, 211, 0.35), 0 0 10px rgba(192, 38, 211, 0.25)',
+            },
+            backdropBlur: {
+              'xl': '20px', // Slightly less blur for better performance if needed
+            }
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0"
+  }
+}
+</script>
+</head>
+<body class="bg-background text-text-primary dark:bg-dark-background dark:text-dark-text-primary font-sans antialiased transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
